@@ -17,7 +17,7 @@ A full-stack task management application using React, Node.js, Express, and Mong
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/yourusername/task-manager.git
+git clone https://github.com/gauravgd123/Task-Manager
 cd task-manager
 ```
 
