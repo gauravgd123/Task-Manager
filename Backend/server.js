@@ -1,19 +1,17 @@
-require("dotenv").config(); // Ensure env variables are loaded
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+const taskRoutes = require("./routes/taskRoutes");
 
-const taskRoutes = require("./routes/tasks.Routes");
+dotenv.config();
+connectDB();
 
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Connected to MongoDB"))
-    .catch((err) => console.log("DB Connection Error:", err));
-
-app.use("/api", taskRoutes);
+app.use("/api/tasks", taskRoutes); // Task Routes
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

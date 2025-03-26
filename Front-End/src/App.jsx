@@ -1,11 +1,7 @@
-import TaskList from "./components/TaskList";
+import Home from "./pages/Home";
 
 function App() {
-    return (
-        <div className="max-w-md mx-auto mt-10">
-            <TaskList />
-        </div>
-    );
+  return <Home />;
 }
 
 export default App;

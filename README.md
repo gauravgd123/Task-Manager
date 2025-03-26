@@ -144,12 +144,13 @@ curl -X GET http://localhost:5000/api/tasks
 ## Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/task-managerUI.png)
-![Home Page](screenshots/new-task.png)
+![Home Page](screenshots/task-manager-UI.png)
+![Home Page](screenshots/add-task.png)
 
 ### ✅ Task List database
-![Task List](screenshots/database-view.png)
-![Task List](screenshots/task-lists.png)
+![Task List](screenshots/database-tasks.png)
+![Task List](screenshots/added-task.png)
+![Task List](screenshots/added-tasks.png)
 
 
 
