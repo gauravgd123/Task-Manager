@@ -7,7 +7,7 @@ const TaskDetails = () => {
 
   const fetchTask = async () => {
     try {
-        const res = await axios.get(`http://localhost:5000/api/tasks/${taskId}`);
+        const res = await axios.get(`${API_BASE_URL}/api/tasks/${taskId}`);
       setTask(res.data);
     } catch (error) {
       setTask(null);

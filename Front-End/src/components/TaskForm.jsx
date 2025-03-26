@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
 const TaskForm = ({ refreshTasks }) => {
   const [task, setTask] = useState({ title: "", description: "", completed: false });
@@ -7,9 +9,9 @@ const TaskForm = ({ refreshTasks }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:5000/api/tasks", {
+    await axios.post("${API_BASE_URL}/api/tasks", {
       ...task,
-      completed: Boolean(task.completed), // Ensure it's a boolean
+      completed: Boolean(task.completed), 
     });
 
     setTask({ title: "", description: "", completed: false });
@@ -35,7 +37,7 @@ const TaskForm = ({ refreshTasks }) => {
       <select
         className="border p-2 w-full mb-2"
         value={task.completed}
-        onChange={(e) => setTask({ ...task, completed: e.target.value === "true" })} // Convert string to boolean
+        onChange={(e) => setTask({ ...task, completed: e.target.value === "true" })} 
       >
         <option value="false">Pending</option>
         <option value="true">Completed</option>

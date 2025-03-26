@@ -1,15 +1,16 @@
 import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const TaskItem = ({ task, refreshTasks }) => {
   const toggleStatus = async () => {
-    await axios.put(`http://localhost:5000/api/tasks/${task._id}`, {
+    await axios.put(`${API_BASE_URL}/api/tasks/${task._id}`, {
         completed: !task.completed,
       });
     refreshTasks();
   };
 
   const deleteTask = async () => {
-    await axios.delete(`http://localhost:5000/api/tasks/${task._id}`);
+    await axios.delete(`${API_BASE_URL}/api/tasks/${task._id}`);
     refreshTasks();
   };
 

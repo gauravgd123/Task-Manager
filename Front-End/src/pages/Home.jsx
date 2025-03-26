@@ -8,7 +8,7 @@ const Home = () => {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
-    const res = await axios.get("http://localhost:5000/api/tasks");
+    const res = await axios.get("${API_BASE_URL}/api/tasks");
 
     setTasks(res.data);
   };
