@@ -3,12 +3,13 @@ import axios from "axios";
 import TaskForm from "../components/TaskForm";
 import TaskList from "../components/TaskList";
 import TaskDetails from "../components/TaskDetails";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
-    const res = await axios.get("${API_BASE_URL}/api/tasks");
+    const res = await axios.get(`${API_BASE_URL}/api/tasks`);
 
     setTasks(res.data);
   };
